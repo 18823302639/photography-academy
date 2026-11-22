@@ -1,0 +1,408 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Photography Academy local prototype",
+    "version": "0.1.0"
+  },
+  "paths": {
+    "/health": {
+      "get": {
+        "summary": "Health",
+        "operationId": "health_health_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/practice": {
+      "get": {
+        "summary": "Practice",
+        "operationId": "practice_api_v1_practice_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Practice"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/exports/preview": {
+      "post": {
+        "summary": "Preview",
+        "operationId": "preview_api_v1_exports_preview_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Recipe"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/exports/xmp": {
+      "post": {
+        "summary": "Xmp",
+        "operationId": "xmp_api_v1_exports_xmp_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Recipe"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "HTTPValidationError": {
+        "properties": {
+          "detail": {
+            "items": {
+              "$ref": "#/components/schemas/ValidationError"
+            },
+            "type": "array",
+            "title": "Detail"
+          }
+        },
+        "type": "object",
+        "title": "HTTPValidationError"
+      },
+      "Practice": {
+        "properties": {
+          "schema_version": {
+            "type": "string",
+            "const": "1.0",
+            "title": "Schema Version"
+          },
+          "mode": {
+            "type": "string",
+            "const": "mock",
+            "title": "Mode"
+          },
+          "exercise_id": {
+            "type": "string",
+            "title": "Exercise Id"
+          },
+          "title": {
+            "type": "string",
+            "title": "Title"
+          },
+          "gear": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Gear"
+          },
+          "steps": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Steps"
+          },
+          "cautions": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Cautions"
+          },
+          "exif_source": {
+            "type": "string",
+            "const": "missing",
+            "title": "Exif Source"
+          },
+          "intent": {
+            "type": "string",
+            "const": "low_key",
+            "title": "Intent"
+          },
+          "review": {
+            "$ref": "#/components/schemas/Review"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "schema_version",
+          "mode",
+          "exercise_id",
+          "title",
+          "gear",
+          "steps",
+          "cautions",
+          "exif_source",
+          "intent",
+          "review"
+        ],
+        "title": "Practice"
+      },
+      "Recipe": {
+        "properties": {
+          "recipe_version": {
+            "type": "string",
+            "const": "1.0",
+            "title": "Recipe Version",
+            "default": "1.0"
+          },
+          "input_kind": {
+            "type": "string",
+            "const": "jpeg",
+            "title": "Input Kind",
+            "default": "jpeg"
+          },
+          "target_product": {
+            "type": "string",
+            "const": "Lightroom desktop (unverified)",
+            "title": "Target Product",
+            "default": "Lightroom desktop (unverified)"
+          },
+          "setting_semantics": {
+            "type": "string",
+            "const": "absolute",
+            "title": "Setting Semantics",
+            "default": "absolute"
+          },
+          "settings": {
+            "$ref": "#/components/schemas/Settings"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "settings"
+        ],
+        "title": "Recipe"
+      },
+      "Review": {
+        "properties": {
+          "kind": {
+            "type": "string",
+            "const": "mock",
+            "title": "Kind"
+          },
+          "fact": {
+            "type": "string",
+            "title": "Fact"
+          },
+          "inference": {
+            "type": "string",
+            "title": "Inference"
+          },
+          "suggestion": {
+            "type": "string",
+            "title": "Suggestion"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "kind",
+          "fact",
+          "inference",
+          "suggestion"
+        ],
+        "title": "Review"
+      },
+      "Settings": {
+        "properties": {
+          "exposure": {
+            "anyOf": [
+              {
+                "type": "number",
+                "maximum": 5.0,
+                "minimum": -5.0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Exposure"
+          },
+          "contrast": {
+            "anyOf": [
+              {
+                "type": "integer",
+                "maximum": 100.0,
+                "minimum": -100.0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Contrast"
+          },
+          "highlights": {
+            "anyOf": [
+              {
+                "type": "integer",
+                "maximum": 100.0,
+                "minimum": -100.0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Highlights"
+          },
+          "shadows": {
+            "anyOf": [
+              {
+                "type": "integer",
+                "maximum": 100.0,
+                "minimum": -100.0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Shadows"
+          },
+          "whites": {
+            "anyOf": [
+              {
+                "type": "integer",
+                "maximum": 100.0,
+                "minimum": -100.0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Whites"
+          },
+          "blacks": {
+            "anyOf": [
+              {
+                "type": "integer",
+                "maximum": 100.0,
+                "minimum": -100.0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Blacks"
+          },
+          "vibrance": {
+            "anyOf": [
+              {
+                "type": "integer",
+                "maximum": 100.0,
+                "minimum": -100.0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Vibrance"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "title": "Settings"
+      },
+      "ValidationError": {
+        "properties": {
+          "loc": {
+            "items": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "integer"
+                }
+              ]
+            },
+            "type": "array",
+            "title": "Location"
+          },
+          "msg": {
+            "type": "string",
+            "title": "Message"
+          },
+          "type": {
+            "type": "string",
+            "title": "Error Type"
+          },
+          "input": {
+            "title": "Input"
+          },
+          "ctx": {
+            "type": "object",
+            "title": "Context"
+          }
+        },
+        "type": "object",
+        "required": [
+          "loc",
+          "msg",
+          "type"
+        ],
+        "title": "ValidationError"
+      }
+    }
+  }
+}

@@ -1,0 +1,103 @@
+{
+  "$defs": {
+    "Review": {
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "const": "mock",
+          "title": "Kind",
+          "type": "string"
+        },
+        "fact": {
+          "title": "Fact",
+          "type": "string"
+        },
+        "inference": {
+          "title": "Inference",
+          "type": "string"
+        },
+        "suggestion": {
+          "title": "Suggestion",
+          "type": "string"
+        }
+      },
+      "required": [
+        "kind",
+        "fact",
+        "inference",
+        "suggestion"
+      ],
+      "title": "Review",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "1.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "mode": {
+      "const": "mock",
+      "title": "Mode",
+      "type": "string"
+    },
+    "exercise_id": {
+      "title": "Exercise Id",
+      "type": "string"
+    },
+    "title": {
+      "title": "Title",
+      "type": "string"
+    },
+    "gear": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Gear",
+      "type": "array"
+    },
+    "steps": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Steps",
+      "type": "array"
+    },
+    "cautions": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Cautions",
+      "type": "array"
+    },
+    "exif_source": {
+      "const": "missing",
+      "title": "Exif Source",
+      "type": "string"
+    },
+    "intent": {
+      "const": "low_key",
+      "title": "Intent",
+      "type": "string"
+    },
+    "review": {
+      "$ref": "#/$defs/Review"
+    }
+  },
+  "required": [
+    "schema_version",
+    "mode",
+    "exercise_id",
+    "title",
+    "gear",
+    "steps",
+    "cautions",
+    "exif_source",
+    "intent",
+    "review"
+  ],
+  "title": "Practice",
+  "type": "object"
+}

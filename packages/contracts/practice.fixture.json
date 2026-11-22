@@ -1,0 +1,9 @@
+{
+ "schema_version": "1.0", "mode": "mock", "exercise_id": "single-light-bust-v1",
+ "title": "一盏灯，观察大卫石膏像的明暗交界",
+ "gear": ["Canon EOS R7", "V1", "ML100", "Likai 40W", "David bust"],
+ "steps": ["先选择 ML100 或徕凯 40W 中的一盏常亮灯，其余灯关闭。", "固定机位、构图及曝光，灯距先约 1 米，比较左侧 45°、正面、右侧 45°。", "记录鼻影、明暗交界和背景变化，再只改变灯距复拍。"],
+ "cautions": ["V1 闪光不以本页亮度示意预测，先用常亮灯练习。", "示意球面不是大卫模型，没有软箱尺寸、反射、遮挡或真实灯具标定。", "ISO 不会增加照到物体上的光。"],
+ "exif_source": "missing", "intent": "low_key",
+ "review": {"kind": "mock", "fact": "未提供照片和 EXIF，不能判断实际曝光。", "inference": "低调意图允许较大暗部，不能仅凭暗就判失败。", "suggestion": "保持相机参数不变，只移动一盏灯，观察鼻影变化。"}
+}

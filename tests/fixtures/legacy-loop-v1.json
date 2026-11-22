@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "exerciseId": "single-light-bust-v1",
+  "draft": {
+    "intent": "",
+    "conditions": "",
+    "observation": "",
+    "reflection": "",
+    "light": {
+      "angle": 45,
+      "distance": 1,
+      "power": 100
+    }
+  },
+  "first": {
+    "id": "single-light-bust-v1:first",
+    "exerciseId": "single-light-bust-v1",
+    "source": "user_report",
+    "exifSource": "missing",
+    "photoId": null,
+    "savedAt": "2026-11-14T00:00:00Z",
+    "draft": {
+      "intent": "合成手填记录，未实拍",
+      "conditions": "合成条件，曝光未知",
+      "observation": "仅用于旧版本兼容测试",
+      "reflection": "",
+      "light": {
+        "angle": 45,
+        "distance": 1,
+        "power": 100
+      }
+    },
+    "review": {
+      "kind": "mock",
+      "model": "none",
+      "promptVersion": "none",
+      "schemaVersion": "1",
+      "rubricVersion": "single-light-v1",
+      "analysisVersion": "mock-loop-v1",
+      "submissionId": "single-light-bust-v1:first",
+      "fact": "仅保存了手填意图、条件和观察，以及模拟参数快照。没有照片，EXIF 缺失；无法验证实际曝光或画面。",
+      "inference": "未进行视觉推断。低调意图允许较大暗部，不能仅凭暗就判失败；手填观察尚未独立验证。",
+      "suggestions": [
+        "固定机位、构图与曝光，只改变一个灯光变量。",
+        "复拍后记录鼻影、明暗交界及背景变化，并列出其他条件差异。"
+      ]
+    }
+  },
+  "retake": null
+}

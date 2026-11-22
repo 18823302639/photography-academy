@@ -1,0 +1,10 @@
+{
+  "miniprogramRoot": "dist/",
+  "projectname": "photography-academy",
+  "appid": "touristappid",
+  "compileType": "miniprogram",
+  "setting": {
+    "es6": true,
+    "minified": false
+  }
+}

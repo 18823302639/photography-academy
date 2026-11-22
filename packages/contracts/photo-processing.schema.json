@@ -1,0 +1,379 @@
+{
+  "$defs": {
+    "CaptureStates": {
+      "additionalProperties": false,
+      "properties": {
+        "exposure_seconds": {
+          "enum": [
+            "available",
+            "missing",
+            "invalid",
+            "unreadable"
+          ],
+          "title": "Exposure Seconds",
+          "type": "string"
+        },
+        "f_number": {
+          "enum": [
+            "available",
+            "missing",
+            "invalid",
+            "unreadable"
+          ],
+          "title": "F Number",
+          "type": "string"
+        },
+        "iso": {
+          "enum": [
+            "available",
+            "missing",
+            "invalid",
+            "unreadable"
+          ],
+          "title": "Iso",
+          "type": "string"
+        },
+        "focal_length_mm": {
+          "enum": [
+            "available",
+            "missing",
+            "invalid",
+            "unreadable"
+          ],
+          "title": "Focal Length Mm",
+          "type": "string"
+        },
+        "orientation": {
+          "enum": [
+            "available",
+            "missing",
+            "invalid",
+            "unreadable"
+          ],
+          "title": "Orientation",
+          "type": "string"
+        }
+      },
+      "required": [
+        "exposure_seconds",
+        "f_number",
+        "iso",
+        "focal_length_mm",
+        "orientation"
+      ],
+      "title": "CaptureStates",
+      "type": "object"
+    },
+    "CaptureValues": {
+      "additionalProperties": false,
+      "properties": {
+        "exposure_seconds": {
+          "anyOf": [
+            {
+              "exclusiveMinimum": 0,
+              "maximum": 86400,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Exposure Seconds"
+        },
+        "f_number": {
+          "anyOf": [
+            {
+              "exclusiveMinimum": 0,
+              "maximum": 256,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "F Number"
+        },
+        "iso": {
+          "anyOf": [
+            {
+              "maximum": 10000000,
+              "minimum": 1,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Iso"
+        },
+        "focal_length_mm": {
+          "anyOf": [
+            {
+              "exclusiveMinimum": 0,
+              "maximum": 100000,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Focal Length Mm"
+        },
+        "orientation": {
+          "anyOf": [
+            {
+              "maximum": 8,
+              "minimum": 1,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Orientation"
+        }
+      },
+      "required": [
+        "exposure_seconds",
+        "f_number",
+        "iso",
+        "focal_length_mm",
+        "orientation"
+      ],
+      "title": "CaptureValues",
+      "type": "object"
+    },
+    "DerivedJpegInfo": {
+      "additionalProperties": false,
+      "properties": {
+        "format": {
+          "const": "jpeg",
+          "title": "Format",
+          "type": "string"
+        },
+        "bytes": {
+          "maximum": 10485760,
+          "minimum": 1,
+          "title": "Bytes",
+          "type": "integer"
+        },
+        "size": {
+          "$ref": "#/$defs/PixelSize"
+        },
+        "metadata": {
+          "const": "fresh_pixels_no_source_metadata",
+          "title": "Metadata",
+          "type": "string"
+        },
+        "pixel_content": {
+          "const": "not_anonymized",
+          "title": "Pixel Content",
+          "type": "string"
+        },
+        "color": {
+          "const": "no_icc_transform",
+          "title": "Color",
+          "type": "string"
+        },
+        "orientation": {
+          "enum": [
+            "applied",
+            "normal",
+            "not_present",
+            "invalid",
+            "unreadable"
+          ],
+          "title": "Orientation",
+          "type": "string"
+        }
+      },
+      "required": [
+        "format",
+        "bytes",
+        "size",
+        "metadata",
+        "pixel_content",
+        "color",
+        "orientation"
+      ],
+      "title": "DerivedJpegInfo",
+      "type": "object"
+    },
+    "ExifProjection": {
+      "additionalProperties": false,
+      "properties": {
+        "source": {
+          "const": "input_exif_not_verified",
+          "title": "Source",
+          "type": "string"
+        },
+        "container": {
+          "enum": [
+            "absent",
+            "read",
+            "unreadable"
+          ],
+          "title": "Container",
+          "type": "string"
+        },
+        "values": {
+          "$ref": "#/$defs/CaptureValues"
+        },
+        "states": {
+          "$ref": "#/$defs/CaptureStates"
+        }
+      },
+      "required": [
+        "source",
+        "container",
+        "values",
+        "states"
+      ],
+      "title": "ExifProjection",
+      "type": "object"
+    },
+    "JpegInputInfo": {
+      "additionalProperties": false,
+      "properties": {
+        "format": {
+          "const": "jpeg",
+          "title": "Format",
+          "type": "string"
+        },
+        "bytes": {
+          "maximum": 10485760,
+          "minimum": 1,
+          "title": "Bytes",
+          "type": "integer"
+        },
+        "size": {
+          "$ref": "#/$defs/PixelSize"
+        }
+      },
+      "required": [
+        "format",
+        "bytes",
+        "size"
+      ],
+      "title": "JpegInputInfo",
+      "type": "object"
+    },
+    "PhotoProcessingFailure": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "status": {
+          "const": "rejected",
+          "title": "Status",
+          "type": "string"
+        },
+        "code": {
+          "enum": [
+            "invalid_input_type",
+            "bytes_limit",
+            "unsupported_format",
+            "pixel_limit",
+            "decode_failed",
+            "processing_failed"
+          ],
+          "title": "Code",
+          "type": "string"
+        }
+      },
+      "required": [
+        "schema_version",
+        "status",
+        "code"
+      ],
+      "title": "PhotoProcessingFailure",
+      "type": "object"
+    },
+    "PhotoProcessingReport": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "status": {
+          "const": "processed",
+          "title": "Status",
+          "type": "string"
+        },
+        "projection_policy": {
+          "const": "allowlist_only",
+          "title": "Projection Policy",
+          "type": "string"
+        },
+        "original_bytes": {
+          "const": "unchanged",
+          "title": "Original Bytes",
+          "type": "string"
+        },
+        "input": {
+          "$ref": "#/$defs/JpegInputInfo"
+        },
+        "exif": {
+          "$ref": "#/$defs/ExifProjection"
+        },
+        "derived": {
+          "$ref": "#/$defs/DerivedJpegInfo"
+        }
+      },
+      "required": [
+        "schema_version",
+        "status",
+        "projection_policy",
+        "original_bytes",
+        "input",
+        "exif",
+        "derived"
+      ],
+      "title": "PhotoProcessingReport",
+      "type": "object"
+    },
+    "PixelSize": {
+      "additionalProperties": false,
+      "properties": {
+        "width": {
+          "maximum": 40000000,
+          "minimum": 1,
+          "title": "Width",
+          "type": "integer"
+        },
+        "height": {
+          "maximum": 40000000,
+          "minimum": 1,
+          "title": "Height",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "width",
+        "height"
+      ],
+      "title": "PixelSize",
+      "type": "object"
+    }
+  },
+  "discriminator": {
+    "mapping": {
+      "processed": "#/$defs/PhotoProcessingReport",
+      "rejected": "#/$defs/PhotoProcessingFailure"
+    },
+    "propertyName": "status"
+  },
+  "oneOf": [
+    {
+      "$ref": "#/$defs/PhotoProcessingReport"
+    },
+    {
+      "$ref": "#/$defs/PhotoProcessingFailure"
+    }
+  ]
+}

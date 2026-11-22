@@ -1,0 +1,22 @@
+import Taro from '@tarojs/taro'
+import type {LocalPhotoPort} from '../../../../../packages/photography-core/src/photo-input'
+export const localPhotoPort:LocalPhotoPort={
+ size:path=>new Promise((resolve,reject)=>{
+  Taro.getFileSystemManager().getFileInfo({filePath:path,success:r=>resolve(r.size),fail:reject})
+ }),
+ header:path=>new Promise((resolve,reject)=>{
+  // Signature only. The separate bounded APP1 reader is responsible for EXIF projection.
+  Taro.getFileSystemManager().readFile({filePath:path,position:0,length:3,
+   success:r=>r.data instanceof ArrayBuffer?resolve(new Uint8Array(r.data)):reject(new Error('binary read required')),fail:reject})
+ }),
+ imageInfo:async path=>{
+  const r=await Taro.getImageInfo({src:path})
+  return {type:r.type,width:r.width,height:r.height}
+ }
+}
+export function readLocalRange(path:string,position:number,length:number):Promise<Uint8Array>{
+ return new Promise((resolve,reject)=>{
+  Taro.getFileSystemManager().readFile({filePath:path,position,length,
+   success:r=>r.data instanceof ArrayBuffer?resolve(new Uint8Array(r.data)):reject(new Error('binary read required')),fail:reject})
+ })
+}

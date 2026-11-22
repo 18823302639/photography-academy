@@ -1,0 +1,7 @@
+{
+  "baseline_library_file_id": "[archived-artifact]",
+  "baseline_sha256": "0b78c745d31dd2d4ea1ee394a0f0eb0814dc7f99f97913627ee7f6d02716a563",
+  "source": "apps/miniprogram/src/pages/index/local-photo-port.ts",
+  "source_sha256": "3e7e4a1776796deab1942bb74fabfa94ef2b4e70bdcce0ef0bbd35c5ff62d791",
+  "scope": "exact previous adapter source, no private images/paths"
+}

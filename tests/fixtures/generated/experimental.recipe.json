@@ -1,0 +1,21 @@
+{
+  "validation_status": "experimental_not_import_verified",
+  "setting_semantics": "absolute",
+  "settings": {
+    "exposure": 0.3,
+    "shadows": 20
+  },
+  "text": [
+    "曝光 EV: 0.3（目标覆盖值，非增量）",
+    "阴影: 20（目标覆盖值，非增量）"
+  ],
+  "xmp": "<x:xmpmeta xmlns:crs=\"http://ns.adobe.com/camera-raw-settings/1.0/\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\" xmlns:x=\"adobe:ns:meta/\"><rdf:RDF><rdf:Description rdf:about=\"\" crs:PresetType=\"Normal\" crs:UUID=\"74D3B7491918572EA12F2DBA4009E01C\" crs:SupportsAmount=\"False\" crs:Exposure2012=\"0.3\" crs:Shadows2012=\"20\"><crs:Name><rdf:Alt><rdf:li xml:lang=\"x-default\">Photography Academy experimental</rdf:li></rdf:Alt></crs:Name></rdf:Description></rdf:RDF></x:xmpmeta>",
+  "unsupported_settings": [
+    "white_balance",
+    "HSL",
+    "curves",
+    "masks",
+    "camera_profile"
+  ],
+  "warning": "仅通过结构与范围校验，尚未在指定 Lightroom 产品/版本验证导入。"
+}

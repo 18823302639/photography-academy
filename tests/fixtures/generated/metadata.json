@@ -1,0 +1,19 @@
+{
+  "source": "original_exif",
+  "values": {
+    "exposure_seconds": 0.008,
+    "f_number": 4.0,
+    "iso": 100.0,
+    "focal_length_mm": 50.0,
+    "orientation": 6.0
+  },
+  "original_size": [
+    80,
+    40
+  ],
+  "derived_size": [
+    40,
+    80
+  ],
+  "color_handling": "prototype: no ICC color transform; do not use for color-critical evaluation"
+}

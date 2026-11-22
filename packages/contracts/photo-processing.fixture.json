@@ -1,0 +1,227 @@
+{
+  "normal": {
+    "schema_version": "1.0",
+    "status": "processed",
+    "projection_policy": "allowlist_only",
+    "original_bytes": "unchanged",
+    "input": {
+      "format": "jpeg",
+      "bytes": 2057,
+      "size": {
+        "width": 96,
+        "height": 64
+      }
+    },
+    "exif": {
+      "source": "input_exif_not_verified",
+      "container": "read",
+      "values": {
+        "exposure_seconds": 0.008,
+        "f_number": 4.0,
+        "iso": 200,
+        "focal_length_mm": 50.0,
+        "orientation": 6
+      },
+      "states": {
+        "exposure_seconds": "available",
+        "f_number": "available",
+        "iso": "available",
+        "focal_length_mm": "available",
+        "orientation": "available"
+      }
+    },
+    "derived": {
+      "format": "jpeg",
+      "bytes": 917,
+      "size": {
+        "width": 64,
+        "height": 96
+      },
+      "metadata": "fresh_pixels_no_source_metadata",
+      "pixel_content": "not_anonymized",
+      "color": "no_icc_transform",
+      "orientation": "applied"
+    }
+  },
+  "no_exif": {
+    "schema_version": "1.0",
+    "status": "processed",
+    "projection_policy": "allowlist_only",
+    "original_bytes": "unchanged",
+    "input": {
+      "format": "jpeg",
+      "bytes": 933,
+      "size": {
+        "width": 96,
+        "height": 64
+      }
+    },
+    "exif": {
+      "source": "input_exif_not_verified",
+      "container": "absent",
+      "values": {
+        "exposure_seconds": null,
+        "f_number": null,
+        "iso": null,
+        "focal_length_mm": null,
+        "orientation": null
+      },
+      "states": {
+        "exposure_seconds": "missing",
+        "f_number": "missing",
+        "iso": "missing",
+        "focal_length_mm": "missing",
+        "orientation": "missing"
+      }
+    },
+    "derived": {
+      "format": "jpeg",
+      "bytes": 917,
+      "size": {
+        "width": 96,
+        "height": 64
+      },
+      "metadata": "fresh_pixels_no_source_metadata",
+      "pixel_content": "not_anonymized",
+      "color": "no_icc_transform",
+      "orientation": "not_present"
+    }
+  },
+  "invalid_fields": {
+    "schema_version": "1.0",
+    "status": "processed",
+    "projection_policy": "allowlist_only",
+    "original_bytes": "unchanged",
+    "input": {
+      "format": "jpeg",
+      "bytes": 1685,
+      "size": {
+        "width": 96,
+        "height": 64
+      }
+    },
+    "exif": {
+      "source": "input_exif_not_verified",
+      "container": "read",
+      "values": {
+        "exposure_seconds": null,
+        "f_number": null,
+        "iso": null,
+        "focal_length_mm": null,
+        "orientation": null
+      },
+      "states": {
+        "exposure_seconds": "invalid",
+        "f_number": "invalid",
+        "iso": "invalid",
+        "focal_length_mm": "invalid",
+        "orientation": "invalid"
+      }
+    },
+    "derived": {
+      "format": "jpeg",
+      "bytes": 917,
+      "size": {
+        "width": 96,
+        "height": 64
+      },
+      "metadata": "fresh_pixels_no_source_metadata",
+      "pixel_content": "not_anonymized",
+      "color": "no_icc_transform",
+      "orientation": "invalid"
+    }
+  },
+  "unreadable_exif": {
+    "schema_version": "1.0",
+    "status": "processed",
+    "projection_policy": "allowlist_only",
+    "original_bytes": "unchanged",
+    "input": {
+      "format": "jpeg",
+      "bytes": 971,
+      "size": {
+        "width": 96,
+        "height": 64
+      }
+    },
+    "exif": {
+      "source": "input_exif_not_verified",
+      "container": "unreadable",
+      "values": {
+        "exposure_seconds": null,
+        "f_number": null,
+        "iso": null,
+        "focal_length_mm": null,
+        "orientation": null
+      },
+      "states": {
+        "exposure_seconds": "unreadable",
+        "f_number": "unreadable",
+        "iso": "unreadable",
+        "focal_length_mm": "unreadable",
+        "orientation": "unreadable"
+      }
+    },
+    "derived": {
+      "format": "jpeg",
+      "bytes": 917,
+      "size": {
+        "width": 96,
+        "height": 64
+      },
+      "metadata": "fresh_pixels_no_source_metadata",
+      "pixel_content": "not_anonymized",
+      "color": "no_icc_transform",
+      "orientation": "unreadable"
+    }
+  },
+  "xmp_only": {
+    "schema_version": "1.0",
+    "status": "processed",
+    "projection_policy": "allowlist_only",
+    "original_bytes": "unchanged",
+    "input": {
+      "format": "jpeg",
+      "bytes": 1249,
+      "size": {
+        "width": 96,
+        "height": 64
+      }
+    },
+    "exif": {
+      "source": "input_exif_not_verified",
+      "container": "absent",
+      "values": {
+        "exposure_seconds": null,
+        "f_number": null,
+        "iso": null,
+        "focal_length_mm": null,
+        "orientation": null
+      },
+      "states": {
+        "exposure_seconds": "missing",
+        "f_number": "missing",
+        "iso": "missing",
+        "focal_length_mm": "missing",
+        "orientation": "missing"
+      }
+    },
+    "derived": {
+      "format": "jpeg",
+      "bytes": 917,
+      "size": {
+        "width": 96,
+        "height": 64
+      },
+      "metadata": "fresh_pixels_no_source_metadata",
+      "pixel_content": "not_anonymized",
+      "color": "no_icc_transform",
+      "orientation": "not_present"
+    }
+  },
+  "over_pixels": {
+    "schema_version": "1.0",
+    "status": "rejected",
+    "code": "pixel_limit"
+  }
+}
